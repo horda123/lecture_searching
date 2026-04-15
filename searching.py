@@ -22,10 +22,16 @@ def read_data(file_name, field):
     
     file_path = cwd_path / file_name
 
+    with open(filepath, "r") as file:
+        data = json.load(file)
+    if field in data.kezs():
+        return data(field)
+    else:
+        return None
 
 def main():
-    pass
-
+    sv_data = read_data(file_name, field)
+    print(sv_data)
 
 if __name__ == "__main__":
     main()
